@@ -483,7 +483,7 @@ class CommandHandler {
    */
   async cleanInactiveUsers(sock, chatId, args) {
     const stateManager = require('./stateManager');
-    const cleanupScheduler = require('./cleanupScheduler');
+    const cleanupScheduler = require('../modules/cleanupScheduler');
     
     // Verificar si se especificó un período personalizado
     const months = args[0] ? parseInt(args[0]) : null;
@@ -516,7 +516,7 @@ class CommandHandler {
    * @param {Array} args Argumentos del comando
    */
   async setInactivePeriod(sock, chatId, args) {
-    const cleanupScheduler = require('./cleanupScheduler');
+    const cleanupScheduler = require('../modules/cleanupScheduler');
     
     if (!args[0] || isNaN(parseInt(args[0])) || parseInt(args[0]) <= 0) {
       await sock.sendMessage(chatId, { 
@@ -545,7 +545,7 @@ class CommandHandler {
    * @param {Array} args Argumentos del comando
    */
   async manageReactivation(sock, chatId, args) {
-    const autoReactivation = require('./autoReactivationManager');
+    const autoReactivation = require('../modules/autoReactivationManager');
     
     if (!args.length) {
       // Mostrar estado actual

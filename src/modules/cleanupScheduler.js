@@ -4,7 +4,7 @@
  */
 
 const cron = require('node-cron');
-const stateManager = require('./stateManager');
+const stateManager = require('../services/stateManager');
 const backup = require('./backup');
 
 class CleanupScheduler {

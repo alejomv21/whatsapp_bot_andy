@@ -39,3 +39,9 @@ src/dialogflow-credentials.json
 src/*.json
 src/backup/*.json
 src/backup/**/*.json
+src/services/*.json
+src/services/**/*.json
+src/services/**/**/*.json
+auth_info_baileys/
+backups/
+

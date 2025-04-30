@@ -5,7 +5,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const commandHandler = require('./commandHandler');
+const commandHandler = require('../services/commandHandler');
 
 class AutoReactivationManager {
   constructor() {

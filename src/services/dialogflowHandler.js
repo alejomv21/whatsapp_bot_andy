@@ -13,6 +13,8 @@ class DialogflowHandler {
     this.projectId = process.env.DIALOGFLOW_PROJECT_ID;
     this.credentialsPath = path.join(__dirname, "dialogflow-credentials.json");
 
+    // const credentialsPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
+
     // Verificar que las credenciales estén configuradas
     if (!this.projectId) {
       console.log(this.projectId);
