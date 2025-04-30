@@ -1,0 +1,36 @@
+{
+  "name": "whatsapo-bot-dialog",
+  "version": "1.0.0",
+  "description": "Bot de WhatsApp para Andy's Don Cash utilizando Baileys y Dialogflow",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "webhook": "node src/webhook.js",
+    "dev": "nodemon src/index.js",
+    "dev:webhook": "nodemon src/webhook.js",
+    "backup": "node -e \"require('./backup').performManualBackup('manual')\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "baileys",
+    "dialogflow",
+    "pawnshop"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/dialogflow": "^7.0.1",
+    "@whiskeysockets/baileys": "^6.7.16",
+    "dialogflow-fulfillment": "^0.6.1",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "node-cron": "^3.0.3",
+    "pino": "^9.6.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
