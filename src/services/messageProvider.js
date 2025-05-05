@@ -38,7 +38,7 @@ Gracias por contactar a Andy’s Don Cash, tu casa de empeño en Wynwood, Miami.
     if (languageCode === 'en') {
       return `👋 Hi! Thanks for contacting **Andy's Don Cash**, your trusted pawnshop in Wynwood, Miami.
 
-🕒 We're currently **closed**, but we'll help you as soon as we're back!
+🕒 We're currently *closed*, but we'll help you as soon as we're back!
 
 📅 Business Hours:
 Mon–Fri: 10 AM – 5 PM
@@ -57,19 +57,19 @@ Also send us:
 
 🙏 Thanks for choosing Andy's Don Cash! We'll reach out first thing next business day.`;
     } else {
-      return `👋 ¡Hola! Gracias por escribir a **Andy's Don Cash**, tu casa de empeño en Wynwood, Miami.
+      return `👋 ¡Hola! Gracias por escribir a *Andy's Don Cash*, tu casa de empeño en Wynwood, Miami.
 
-🕒 En este momento estamos **fuera de horario**, pero no te preocupes, ¡te ayudaremos tan pronto abramos!
+🕒 En este momento estamos *fuera de horario*, pero no te preocupes, ¡te ayudaremos tan pronto abramos!
 
-📅 **Horario de atención:**
+📅 *Horario de atención:*
 Lunes a Viernes: 10 AM – 5 PM
 Sábados: WhatsApp de 10 AM – 12 PM
 Domingos: Cerrado
 
 Responde con el número de lo que te interesa:
-1️⃣ Estoy interesado en empeñar o vender **relojes de lujo**
-2️⃣ Quiero empeñar o vender **diamantes**
-3️⃣ Tengo **oro** o **plata** para evaluación o préstamo
+1️⃣ Estoy interesado en empeñar o vender *relojes de lujo*
+2️⃣ Quiero empeñar o vender *diamantes*
+3️⃣ Tengo *oro* o *plata* para evaluación o préstamo
 
 También incluye por favor:
 📛 Tu nombre
@@ -88,7 +88,7 @@ Wynwood baby!!!`;
    */
   getBusinessHoursMenu(languageCode) {
     if (languageCode === 'en') {
-      return `👋 Hi! Welcome to **Andy's Don Cash**, your trusted pawnshop in Wynwood.
+      return `👋 Hi! Welcome to *Andy's Don Cash*, your trusted pawnshop in Wynwood.
 
 How can we assist you today? Please reply with:
 1️⃣ Luxury Watches
@@ -98,13 +98,13 @@ How can we assist you today? Please reply with:
 📍 We're located in Wynwood and ready to help.
 🌐 www.andysdoncash.com`;
     } else {
-      return `👋 ¡Hola! Bienvenido a **Andy's Don Cash**, tu casa de empeño en Wynwood.
+      return `👋 ¡Hola! Bienvenido a *Andy's Don Cash*, tu casa de empeño en Wynwood.
 
 ¿Cómo podemos ayudarte hoy?
 Responde con:
-1️⃣ Estoy interesado en empeñar o vender **relojes de lujo**
-2️⃣ Quiero empeñar o vender **diamantes**
-3️⃣ Tengo **oro** o **plata** para evaluación o préstamo
+1️⃣ Estoy interesado en empeñar o vender *relojes de lujo*
+2️⃣ Quiero empeñar o vender *diamantes*
+3️⃣ Tengo *oro* o *plata* para evaluación o préstamo
 
 📍 Estamos ubicados en Wynwood.
 🌐 www.andysdoncash.com`;
@@ -214,23 +214,23 @@ Wynwood baby!!!`;
    */
   getFallbackMessage(languageCode) {
     if (languageCode === 'en') {
-      return `At **Andy's Don Cash**, we specialize only in:
+      return `At *Andy's Don Cash*, we specialize only in:
 1️⃣ Luxury Watches
 2️⃣ Diamonds
 3️⃣ Gold
 
-Unfortunately, we **do not deal with other types of items**.
+Unfortunately, we *do not deal with other types of items*.
 
 If you would like to proceed with one of these options, please reply with the corresponding number.
 
 🙏 Thanks for your understanding!`;
     } else {
-      return `En **Andy's Don Cash** nos especializamos únicamente en:
+      return `En *Andy's Don Cash* nos especializamos únicamente en:
 1️⃣ Relojes de lujo
 2️⃣ Diamantes
 3️⃣ Oro
 
-Por el momento, **no trabajamos con otros tipos de artículos**.
+Por el momento, *no trabajamos con otros tipos de artículos*.
 
 Si deseas avanzar con alguno de estos, por favor responde con el número de la opción que mejor se ajuste a lo que tienes.
 
