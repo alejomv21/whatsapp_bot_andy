@@ -3,7 +3,7 @@
  * Centraliza todos los mensajes del bot para facilitar modificaciones
  */
 
-const timeManager = require('./timeManager');
+const timeManager = require("./timeManager");
 
 class MessageProvider {
   /**
@@ -13,6 +13,18 @@ class MessageProvider {
   getWelcomeMessage() {
     return `👋¡Hola! / Hello!
 Gracias por contactar a Andy’s Don Cash, tu casa de empeño en Wynwood, Miami.
+
+🇪🇸 Para continuar en español, responde con: 1️⃣
+🇺🇸 To continue in English, reply with: 2️⃣`;
+  }
+
+  /**
+   * Mensaje de bienvenida inicial con selección de idioma
+   * @returns {string} Mensaje de bienvenida
+   */
+  getWelcomeMessageEnglish() {
+    return `👋¡Hola! / Hello!
+Thanks for contacting Andy’s Don Cash — your trusted pawn shop in Wynwood, Miami.
 
 🇪🇸 Para continuar en español, responde con: 1️⃣
 🇺🇸 To continue in English, reply with: 2️⃣`;
@@ -35,7 +47,7 @@ Gracias por contactar a Andy’s Don Cash, tu casa de empeño en Wynwood, Miami.
    * @returns {string} Mensaje fuera de horario
    */
   getOutOfHoursMessage(languageCode) {
-    if (languageCode === 'en') {
+    if (languageCode === "en") {
       return `👋 Hi! Thanks for contacting **Andy's Don Cash**, your trusted pawnshop in Wynwood, Miami.
 
 🕒 We're currently *closed*, but we'll help you as soon as we're back!
@@ -87,7 +99,7 @@ Wynwood baby!!!`;
    * @returns {string} Mensaje en horario de atención
    */
   getBusinessHoursMenu(languageCode) {
-    if (languageCode === 'en') {
+    if (languageCode === "en") {
       return `👋 Hi! Welcome to *Andy's Don Cash*, your trusted pawnshop in Wynwood.
 
 How can we assist you today? Please reply with:
@@ -117,7 +129,7 @@ Responde con:
    * @returns {string} Respuesta sobre relojes
    */
   getWatchesResponse(languageCode) {
-    if (languageCode === 'en') {
+    if (languageCode === "en") {
       return `⌚ Great! We work with high-end brands like Rolex, Audemars Piguet, Cartier and more.
 
 If you have the watch with you, or would you like to schedule a visit for an appraisal. We'll reply as soon as possible.`;
@@ -134,7 +146,7 @@ If you have the watch with you, or would you like to schedule a visit for an app
    * @returns {string} Respuesta sobre diamantes
    */
   getDiamondsResponse(languageCode) {
-    if (languageCode === 'en') {
+    if (languageCode === "en") {
       return `💎 Perfect. Andy is a certified GIA gemologist. We evaluate diamonds professionally and discreetly.
 
 We'll reply as soon as possible.`;
@@ -151,7 +163,7 @@ Te responderemos lo antes posible.`;
    * @returns {string} Respuesta sobre oro y plata
    */
   getGoldResponse(languageCode) {
-    if (languageCode === 'en') {
+    if (languageCode === "en") {
       return `🪙 We accept gold in any condition: 10k, 14k, 18k, 22k and 24k — even broken or damaged pieces.
 
 Would you like to know how much you could get?
@@ -170,19 +182,19 @@ Te responderemos lo antes posible para que sepas cuánto podrías recibir.`;
    * @returns {string} Mensaje de cierre
    */
   getClosingMessage(languageCode, inBusinessHours = true) {
-    let message = '';
-    
-    if (languageCode === 'en') {
+    let message = "";
+
+    if (languageCode === "en") {
       message = `🙏 Thank you for trusting Andy's Don Cash!
 
 `;
-      
+
       if (inBusinessHours) {
         message += `⚡ If it's during hours, we'll reply shortly.`;
       } else {
         message += `🌅 If it's outside hours, we'll reach out first thing next business day.`;
       }
-      
+
       message += `
 
 💰 We turn your valuables into fast, secure solutions.
@@ -191,19 +203,19 @@ Wynwood baby!!!`;
       message = `🙏 ¡Gracias por confiar en Andy's Don Cash!
 
 `;
-      
+
       if (inBusinessHours) {
         message += `⚡ Si es dentro del horario, en breve te respondemos.`;
       } else {
         message += `🌅 Si es fuera del horario, te contactamos a primera hora del próximo día laboral.`;
       }
-      
+
       message += `
 
 💰 Convertimos tus objetos de valor en soluciones rápidas y seguras.
 Wynwood baby!!!`;
     }
-    
+
     return message;
   }
 
@@ -213,7 +225,7 @@ Wynwood baby!!!`;
    * @returns {string} Mensaje de fallback
    */
   getFallbackMessage(languageCode) {
-    if (languageCode === 'en') {
+    if (languageCode === "en") {
       return `At *Andy's Don Cash*, we specialize only in:
 1️⃣ Luxury Watches
 2️⃣ Diamonds
@@ -244,7 +256,7 @@ Si deseas avanzar con alguno de estos, por favor responde con el número de la o
    * @returns {string} Respuesta por defecto
    */
   getDefaultResponse(languageCode) {
-    if (languageCode === 'en') {
+    if (languageCode === "en") {
       return `I didn't quite understand your message. Could you please select one of our services?
 
 1️⃣ Luxury Watches
@@ -265,7 +277,7 @@ Si deseas avanzar con alguno de estos, por favor responde con el número de la o
    * @returns {string} Mensaje de transición
    */
   getOwnerInterventionMessage(languageCode) {
-    if (languageCode === 'en') {
+    if (languageCode === "en") {
       return `You're now being assisted by the owner directly. Thank you for your patience.`;
     } else {
       return `Ahora estás siendo atendido por el dueño directamente. Gracias por tu paciencia.`;
@@ -280,32 +292,35 @@ Si deseas avanzar con alguno de estos, por favor responde con el número de la o
    */
   getMessageByContext(context, languageCode) {
     switch (context) {
-      case 'welcome':
+      case "welcome":
         return this.getWelcomeMessage();
-      
-      case 'language_selection':
+
+      case "language_selection":
         return this.getLanguagePrompt();
-      
-      case 'main_menu':
-        return timeManager.isBusinessHours() 
-          ? this.getBusinessHoursMenu(languageCode) 
+
+      case "main_menu":
+        return timeManager.isBusinessHours()
+          ? this.getBusinessHoursMenu(languageCode)
           : this.getOutOfHoursMessage(languageCode);
-      
-      case 'watches_info':
+
+      case "watches_info":
         return this.getWatchesResponse(languageCode);
-      
-      case 'diamonds_info':
+
+      case "diamonds_info":
         return this.getDiamondsResponse(languageCode);
-      
-      case 'gold_info':
+
+      case "gold_info":
         return this.getGoldResponse(languageCode);
-      
-      case 'closing':
-        return this.getClosingMessage(languageCode, timeManager.isBusinessHours());
-      
-      case 'fallback':
+
+      case "closing":
+        return this.getClosingMessage(
+          languageCode,
+          timeManager.isBusinessHours()
+        );
+
+      case "fallback":
         return this.getFallbackMessage(languageCode);
-      
+
       default:
         return this.getDefaultResponse(languageCode);
     }

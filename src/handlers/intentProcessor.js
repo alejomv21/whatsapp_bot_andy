@@ -5,7 +5,10 @@
 const stateManager = require("../services/stateManager");
 const messageProvider = require("../services/messageProvider");
 const timeManager = require("../services/timeManager");
-const { sendBotMessage } = require("../services/messageService");
+const {
+  sendBotMessage,
+  detectLanguageSimple,
+} = require("../services/messageService");
 
 /**
  * Procesa la intención detectada por Dialogflow
@@ -15,16 +18,32 @@ const { sendBotMessage } = require("../services/messageService");
  * @param {String} intent - Nombre de la intención detectada
  * @param {Object} parameters - Parámetros extraídos por Dialogflow
  * @param {Object} userState - Estado actual del usuario
+ * @param {Object} userMessage - Mensaje del usuario
  */
-async function processIntent(sock, chatId, userId, intent, parameters, userState) {
-  console.log('Intent detectado:', intent);
-  console.log('Estado del usuario:', userState);
-  console.log('Contextos activos:', userState.dialogflowContexts || []);
-  
+async function processIntent(
+  sock,
+  chatId,
+  userId,
+  intent,
+  parameters,
+  userState,
+  userMessage = ""
+) {
+  console.log("Intent detectado:", intent);
+  console.log("Estado del usuario:", userState);
+  console.log("Contextos activos:", userState.dialogflowContexts || []);
+
   switch (intent) {
     case "Default Welcome Intent":
       // Mensaje de bienvenida con opciones de idioma
-      const welcomeMsg = messageProvider.getWelcomeMessage();
+      var detetctedLenguaje = await detectLanguageSimple(userMessage);
+      console.log("Lenguaje detectado:", detetctedLenguaje);
+      console.log("detectar parametros en welcome intent:", parameters);
+      let welcomeMsg = messageProvider.getWelcomeMessage();
+      if (detetctedLenguaje != "es") {
+        welcomeMsg = messageProvider.getWelcomeMessageEnglish();
+      }
+
       await sendBotMessage(sock, chatId, welcomeMsg);
 
       stateManager.updateUserState(userId, {
@@ -79,14 +98,14 @@ async function processIntent(sock, chatId, userId, intent, parameters, userState
         // Verificar horario para enviar menú
         const isBusinessHours = timeManager.isBusinessHours();
         let menuMessage;
-        
+
         if (isBusinessHours) {
           menuMessage = messageProvider.getBusinessHoursMenu(languageCode);
         } else {
           menuMessage = messageProvider.getOutOfHoursMessage(languageCode);
           stateManager.updateUserState(userId, {
             currentContext: "product_selected",
-            processCompleted: true
+            processCompleted: true,
           });
         }
 
@@ -135,7 +154,7 @@ async function processIntent(sock, chatId, userId, intent, parameters, userState
       stateManager.updateUserState(userId, {
         currentContext: "product_selected",
         selectedProduct: productType,
-        processCompleted: true
+        processCompleted: true,
       });
 
       // Añadir mensaje de cierre según horario
@@ -151,8 +170,8 @@ async function processIntent(sock, chatId, userId, intent, parameters, userState
     case "Default Fallback Intent":
       // Mensaje de fallback cuando no se entiende la solicitud
       console.log("Fallback activado, estado del usuario:", userState);
-      
-      if(userState.currentContext === "waiting_language_selection"){
+
+      if (userState.currentContext === "waiting_language_selection") {
         console.log("Idioma no reconocido, reenviar opciones");
         // Idioma no reconocido, reenviar opciones
         const languagePrompt = messageProvider.getLanguagePrompt();
@@ -175,10 +194,9 @@ async function processIntent(sock, chatId, userId, intent, parameters, userState
         userState.languageCode
       );
       await sendBotMessage(sock, chatId, defaultMsg);
-    }
   }
-
+}
 
 module.exports = {
-  processIntent
+  processIntent,
 };

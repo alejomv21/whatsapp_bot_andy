@@ -107,7 +107,7 @@ async function handleIncomingMessage(sock, message) {
     }
 
     // 6. Continuar con el procesamiento normal de intenciones
-    await processIntent(sock, chatId, userId, intent, parameters, userState);
+    await processIntent(sock, chatId, userId, intent, parameters, userState, userMessage);
   } catch (error) {
     console.error("Error al procesar mensaje con Dialogflow:", error);
 
