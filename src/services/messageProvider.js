@@ -11,8 +11,8 @@ class MessageProvider {
    * @returns {string} Mensaje de bienvenida
    */
   getWelcomeMessage() {
-    return `👋¡Hola! / Hello!
-Gracias por contactar a Andy’s Don Cash, tu casa de empeño en Wynwood, Miami.
+    return `👋 ¡Hola! / Hello!
+Gracias por contactar a Andy’s Don Cash — tu casa de empeño en Wynwood, Miami.
 
 🇪🇸 Para continuar en español, responde con: 1️⃣
 🇺🇸 To continue in English, reply with: 2️⃣`;
@@ -23,8 +23,8 @@ Gracias por contactar a Andy’s Don Cash, tu casa de empeño en Wynwood, Miami.
    * @returns {string} Mensaje de bienvenida
    */
   getWelcomeMessageEnglish() {
-    return `👋¡Hola! / Hello!
-Thanks for contacting Andy’s Don Cash — your trusted pawn shop in Wynwood, Miami.
+    return `👋 Hello! / ¡Hola!
+Thanks for contacting Andy’s Don Cash — your trusted pawnshop in Wynwood, Miami.
 
 🇪🇸 Para continuar en español, responde con: 1️⃣
 🇺🇸 To continue in English, reply with: 2️⃣`;
@@ -48,7 +48,7 @@ Thanks for contacting Andy’s Don Cash — your trusted pawn shop in Wynwood, M
    */
   getOutOfHoursMessage(languageCode) {
     if (languageCode === "en") {
-      return `👋 Hi! Thanks for contacting **Andy's Don Cash**, your trusted pawnshop in Wynwood, Miami.
+      return `👋 Hi! Thanks for contacting *Andy's Don Cash*, your trusted pawnshop in Wynwood, Miami.
 
 🕒 We're currently *closed*, but we'll help you as soon as we're back!
 
@@ -57,7 +57,7 @@ Mon–Fri: 10 AM – 5 PM
 Sat: WhatsApp Only, 10 AM – 12 PM
 Sun: Closed
 
-Please reply with what you're interested in:
+Please reply with the number that best describes what you're interested in:
 1️⃣ Luxury Watches
 2️⃣ Diamonds
 3️⃣ Gold or Silver
