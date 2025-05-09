@@ -194,7 +194,7 @@ class CommandHandler {
    * @param {string} chatId ID del chat
    * @param {number} hours Horas que durará la intervención
    */
-  registerManualIntervention(chatId, hours = 24) {
+  registerManualIntervention(chatId, hours = 1) {
     const expiryTime = Date.now() + hours * 60 * 60 * 1000;
 
     this.manualInterventions[chatId] = {
@@ -213,7 +213,7 @@ class CommandHandler {
    * @param {string} chatId ID del chat
    * @param {number} hours Horas que durará la desactivación
    */
-  markProcessCompleted(chatId, hours = 24) {
+  markProcessCompleted(chatId, hours = 1) {
     const expiryTime = Date.now() + hours * 60 * 60 * 1000;
 
     this.completedChats[chatId] = {
@@ -268,6 +268,7 @@ class CommandHandler {
     const helpMessage =
       `¡Gracias por confiar en Andy's Don Cash!\n\n` +
       `💰 Convertimos tus objetos de valor en soluciones rápidas y seguras.
+
 Wynwood baby!!!`;
 
     // await sock.sendMessage(chatId, { text: helpMessage });

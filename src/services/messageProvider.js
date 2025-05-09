@@ -89,6 +89,7 @@ También incluye por favor:
 🌐 www.andysdoncash.com
 
 🙏 ¡Gracias por confiar en Andy's Don Cash! Te contactaremos a primera hora del próximo día hábil.
+
 Wynwood baby!!!`;
     }
   }
@@ -107,7 +108,7 @@ How can we assist you today? Please reply with:
 2️⃣ Diamonds
 3️⃣ Gold or Silver
 
-📍 We're located in Wynwood and ready to help.
+📍 We're located in Wynwood, Miami, Florida and ready to help!
 🌐 www.andysdoncash.com`;
     } else {
       return `👋 ¡Hola! Bienvenido a *Andy's Don Cash*, tu casa de empeño en Wynwood.
@@ -118,7 +119,7 @@ Responde con:
 2️⃣ Quiero empeñar o vender *diamantes*
 3️⃣ Tengo *oro* o *plata* para evaluación o préstamo
 
-📍 Estamos ubicados en Wynwood.
+📍 Estamos ubicados en Wynwood, Miami, Florida. ¡Listos para ayudarte!
 🌐 www.andysdoncash.com`;
     }
   }
@@ -198,6 +199,7 @@ Te responderemos lo antes posible para que sepas cuánto podrías recibir.`;
       message += `
 
 💰 We turn your valuables into fast, secure solutions.
+
 Wynwood baby!!!`;
     } else {
       message = `🙏 ¡Gracias por confiar en Andy's Don Cash!
@@ -205,7 +207,7 @@ Wynwood baby!!!`;
 `;
 
       if (inBusinessHours) {
-        message += `⚡ Si es dentro del horario, en breve te respondemos.`;
+        message += `⚡ Si es dentro del horario, te atenderemos en breve.`;
       } else {
         message += `🌅 Si es fuera del horario, te contactamos a primera hora del próximo día laboral.`;
       }
@@ -213,6 +215,7 @@ Wynwood baby!!!`;
       message += `
 
 💰 Convertimos tus objetos de valor en soluciones rápidas y seguras.
+
 Wynwood baby!!!`;
     }
 
