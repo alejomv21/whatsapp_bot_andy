@@ -60,12 +60,13 @@ Sun: Closed
 Please reply with the number that best describes what you're interested in:
 1️⃣ Luxury Watches
 2️⃣ Diamonds
-3️⃣ Gold or Silver
+3️⃣ Gold, Jewelryor or Silver
 
 Also send us:
 📛 Your name
 📞 Your number (if different from this one)
 🌐 www.andysdoncash.com
+📸 https://instagram.com/andysdoncash
 
 🙏 Thanks for choosing Andy's Don Cash! We'll reach out first thing next business day.`;
     } else {
@@ -81,12 +82,13 @@ Domingos: Cerrado
 Responde con el número de lo que te interesa:
 1️⃣ Estoy interesado en empeñar o vender *relojes de lujo*
 2️⃣ Quiero empeñar o vender *diamantes*
-3️⃣ Tengo *oro* o *plata* para evaluación o préstamo
+3️⃣ Tengo *oro*, *plata* o *joyería* para evaluación o préstamo
 
 También incluye por favor:
 📛 Tu nombre
 📞 Tu número (si es distinto al de este chat)
 🌐 www.andysdoncash.com
+📸 https://instagram.com/andysdoncash
 
 🙏 ¡Gracias por confiar en Andy's Don Cash! Te contactaremos a primera hora del próximo día hábil.
 
@@ -106,10 +108,11 @@ Wynwood baby!!!`;
 How can we assist you today? Please reply with:
 1️⃣ Luxury Watches
 2️⃣ Diamonds
-3️⃣ Gold or Silver
+3️⃣ Gold, Jewelry or Silver
 
 📍 We're located in Wynwood, Miami, Florida and ready to help!
-🌐 www.andysdoncash.com`;
+🌐 www.andysdoncash.com
+📸 https://instagram.com/andysdoncash`;
     } else {
       return `👋 ¡Hola! Bienvenido a *Andy's Don Cash*, tu casa de empeño en Wynwood.
 
@@ -117,10 +120,11 @@ How can we assist you today? Please reply with:
 Responde con:
 1️⃣ Estoy interesado en empeñar o vender *relojes de lujo*
 2️⃣ Quiero empeñar o vender *diamantes*
-3️⃣ Tengo *oro* o *plata* para evaluación o préstamo
+3️⃣ Tengo *oro*, *plata* o *joyería* para evaluación o préstamo
 
 📍 Estamos ubicados en Wynwood, Miami, Florida. ¡Listos para ayudarte!
-🌐 www.andysdoncash.com`;
+🌐 www.andysdoncash.com
+📸 https://instagram.com/andysdoncash`;
     }
   }
 
@@ -165,12 +169,12 @@ Te responderemos lo antes posible.`;
    */
   getGoldResponse(languageCode) {
     if (languageCode === "en") {
-      return `🪙 We accept gold in any condition: 10k, 14k, 18k, 22k and 24k — even broken or damaged pieces.
+      return `🪙 We accept gold, silver or jewelry in any condition: 10k, 14k, 18k, 22k and 24k — even broken or damaged pieces.
 
 Would you like to know how much you could get?
 We'll reply as soon as possible.`;
     } else {
-      return `🪙 Aceptamos oro o plata en cualquier condición: 10k, 14k, 18k, 22k y 24k — incluso roto o sin forma.
+      return `🪙 Aceptamos oro, plata o joyería en cualquier condición: 10k, 14k, 18k, 22k y 24k — incluso roto o sin forma.
 
 Te responderemos lo antes posible para que sepas cuánto podrías recibir.`;
     }
@@ -232,7 +236,7 @@ Wynwood baby!!!`;
       return `At *Andy's Don Cash*, we specialize only in:
 1️⃣ Luxury Watches
 2️⃣ Diamonds
-3️⃣ Gold
+3️⃣ Gold, Jewelry or Silver
 
 Unfortunately, we *do not deal with other types of items*.
 
@@ -243,7 +247,7 @@ If you would like to proceed with one of these options, please reply with the co
       return `En *Andy's Don Cash* nos especializamos únicamente en:
 1️⃣ Relojes de lujo
 2️⃣ Diamantes
-3️⃣ Oro
+3️⃣ Oro, Plata o Joyería
 
 Por el momento, *no trabajamos con otros tipos de artículos*.
 
@@ -264,13 +268,13 @@ Si deseas avanzar con alguno de estos, por favor responde con el número de la o
 
 1️⃣ Luxury Watches
 2️⃣ Diamonds
-3️⃣ Gold or Silver`;
+3️⃣ Gold, Jewelry or Silver`;
     } else {
       return `No he entendido bien tu mensaje. ¿Podrías seleccionar uno de nuestros servicios?
 
 1️⃣ Relojes de lujo
 2️⃣ Diamantes
-3️⃣ Oro o plata`;
+3️⃣ Oro, Plata o Joyería`;
     }
   }
 
