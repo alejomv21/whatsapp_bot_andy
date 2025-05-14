@@ -99,7 +99,7 @@ async function processIntent(
         const isBusinessHours = timeManager.isBusinessHours();
         let menuMessage;
 
-        if (isBusinessHours) {
+        if (!isBusinessHours) {
           menuMessage = messageProvider.getBusinessHoursMenu(languageCode);
         } else {
           menuMessage = messageProvider.getOutOfHoursMessage(languageCode);

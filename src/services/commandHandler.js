@@ -194,7 +194,7 @@ class CommandHandler {
    * @param {string} chatId ID del chat
    * @param {number} hours Horas que durará la intervención
    */
-  registerManualIntervention(chatId, hours = 1) {
+  registerManualIntervention(chatId, hours = 5) {
     const expiryTime = Date.now() + hours * 60 * 60 * 1000;
 
     this.manualInterventions[chatId] = {
@@ -213,7 +213,7 @@ class CommandHandler {
    * @param {string} chatId ID del chat
    * @param {number} hours Horas que durará la desactivación
    */
-  markProcessCompleted(chatId, hours = 1) {
+  markProcessCompleted(chatId, hours = 5) {
     const expiryTime = Date.now() + hours * 60 * 60 * 1000;
 
     this.completedChats[chatId] = {
