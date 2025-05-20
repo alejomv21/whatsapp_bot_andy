@@ -10,7 +10,11 @@ const { sendBotMessage } = require("../services/messageService");
 
 class CommandHandler {
   constructor() {
-    this.ownerNumber = process.env.OWNER_NUMBER || "1234567890"; // Número del dueño
+    // this.ownerNumbersStr  = process.env.OWNER_NUMBER || "1234567890"; // Número del dueño
+
+    const ownerNumbersStr = process.env.OWNER_NUMBER || "1234567890";
+    this.ownerNumbers = ownerNumbersStr.split(",").map((num) => num.trim());
+
     this.commands = {
       "👋": this.showGoodByMessage,
       "/help": this.showHelp,
@@ -46,7 +50,7 @@ class CommandHandler {
    */
   isOwner(userId) {
     console.log("Verificando si el usuario es el dueño:", userId);
-    return userId === this.ownerNumber;
+    return this.ownerNumbers.includes(userId);
   }
 
   /**
@@ -340,7 +344,7 @@ Wynwood baby!!!`;
     const expiryTime = Date.now() + hours * 60 * 60 * 1000;
 
     this.disabledChats[chatId] = {
-      disabledBy: this.ownerNumber,
+      disabledBy: this.ownerNumbers[0],
       startTime: Date.now(),
       expiry: expiryTime,
     };
